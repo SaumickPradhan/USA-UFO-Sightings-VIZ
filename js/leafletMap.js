@@ -11,6 +11,8 @@ class LeafletMap {
     }
     this.data = _data;
     this.initVis();
+    this.initUI(); // Call method to initialize UI
+
   }
   
   /**
@@ -138,7 +140,79 @@ class LeafletMap {
 
   }
 
+  initUI() {
+    let vis = this;
 
+    // Add UI elements for 'color by' options
+    const colorByYearButton = document.getElementById('colorByYear');
+    const colorByMonthButton = document.getElementById('colorByMonth');
+    const colorByTimeOfDayButton = document.getElementById('colorByTimeOfDay');
+
+    // Event listeners for 'color by' options
+    colorByYearButton.addEventListener('click', () => {
+      vis.colorPointsByYear();
+    });
+
+    colorByMonthButton.addEventListener('click', () => {
+      vis.colorPointsByMonth();
+    });
+
+    colorByTimeOfDayButton.addEventListener('click', () => {
+      vis.colorPointsByTimeOfDay();
+    });
+  }
+
+  // Method to color points based on year
+  colorPointsByYear() {
+    let vis = this;
+
+    // Logic to determine colors based on year
+    // Example:
+    vis.Dots.attr("fill", d => {
+      // Extract year from date_time field
+      const year = new Date(d.date_time).getFullYear();
+      // Assign color based on year
+      // You can define your own color scale here
+      // For demonstration, let's say we use blue for even years and red for odd years
+      return year % 2 === 0 ? "blue" : "red";
+    });
+  }
+
+  // Method to color points based on month
+  colorPointsByMonth() {
+    let vis = this;
+
+    // Logic to determine colors based on month
+    // Example:
+    vis.Dots.attr("fill", d => {
+      // Extract month from date_time field
+      const month = new Date(d.date_time).getMonth();
+      // Assign color based on month
+      // You can define your own color scale here
+      // For demonstration, let's assign different shades of green for each month
+      const colorScale = d3.scaleSequential(d3.interpolateGreens).domain([0, 11]);
+      return colorScale(month);
+    });
+  }
+
+  // Method to color points based on time of day
+  colorPointsByTimeOfDay() {
+    let vis = this;
+
+    // Logic to determine colors based on time of day
+    // Example:
+    vis.Dots.attr("fill", d => {
+      // Extract hour from date_time field
+      const hour = new Date(d.date_time).getHours();
+      // Assign color based on time of day
+      // You can define your own color scale here
+      // For demonstration, let's assign different colors for morning, afternoon, evening, and night
+      if (hour >= 6 && hour < 12) return "yellow"; // Morning
+      else if (hour >= 12 && hour < 18) return "orange"; // Afternoon
+      else if (hour >= 18 && hour < 21) return "red"; // Evening
+      else return "blue"; // Night
+    });
+  }
   renderVis() {
     let vis = this;
 

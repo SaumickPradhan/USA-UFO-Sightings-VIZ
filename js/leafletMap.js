@@ -83,7 +83,7 @@ class LeafletMap {
                                 .style('opacity', 1)
                                 .style('z-index', 1000000)
                                   // Format number with million and thousand separator
-                                .html(`<div class="tooltip-label">City: ${d.city_area}, Encounter Length ${d3.format(',')(d.encounter_length)}, Described Encounter Length ${d.described_encounter_length}</div>`);
+                                .html(`<div class="tooltip-label"><b>City:</b> ${d.city_area}, <b>Date and Time:</b> ${d.date_time}, <b>UFO shape</b>: ${d.ufo_shape}, <b>Encounter Description</b>: ${d.description}</div>`);
 
                           })
                         .on('mousemove', (event) => {

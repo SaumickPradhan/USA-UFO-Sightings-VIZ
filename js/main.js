@@ -11,7 +11,7 @@ d3.csv('data/ufo_sightings_NMV.csv')
     // Initialize chart and then show it
     leafletMap = new LeafletMap({ parentElement: '#my-map'}, data);
 
-    attributes = ["Year","Month","Time of the Day","UFO Shape"];
+    attributes = ["Map1","Map2","Map3","Map4"];
 
     // Resource: W3 schools innerHTML
     const GlobalAttribute1 = document.getElementById("select-attribute-1");

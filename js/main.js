@@ -11,7 +11,7 @@ d3.csv('data/ufo_sightings_NMV.csv')
     // Initialize chart and then show it
     leafletMap = new LeafletMap({ parentElement: '#my-map'}, data);
 
-    attributes = ["Map1","Map2","Map3","Map4"];
+    attributes = ["Geo","Topo","Street","Airport"];
 
     // Resource: W3 schools innerHTML
     const GlobalAttribute1 = document.getElementById("select-attribute-1");
@@ -29,7 +29,7 @@ d3.csv('data/ufo_sightings_NMV.csv')
     //GlobalAttribute2.selectedIndex = 1;
 
 
-  GlobalAttribute1.addEventListener('change', function() {
+    GlobalAttribute1.addEventListener('change', function() {
         const selectedAttribute = this.value;
         // Update dot colors based on the selected attribute
         leafletMap.updateVis(selectedAttribute);

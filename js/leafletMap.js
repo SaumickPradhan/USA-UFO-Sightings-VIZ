@@ -53,7 +53,7 @@ class LeafletMap {
       center: [30, 0],
       zoom: 2,
       layers: [vis.base_layer]
-    });
+    }).setView([37.8, -96], 4);
 
     //if you stopped here, you would just have a map
 

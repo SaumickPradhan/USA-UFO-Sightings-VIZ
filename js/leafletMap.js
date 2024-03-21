@@ -166,15 +166,21 @@ class LeafletMap {
   colorPointsByYear() {
     let vis = this;
 
-    // Logic to determine colors based on year
-    // Example:
+    // Get the range of years in the data
+    const minYear = d3.min(vis.data, d => new Date(d.date_time).getFullYear());
+    const maxYear = d3.max(vis.data, d => new Date(d.date_time).getFullYear());
+
+    // Define a color scale that maps older years to darker shades and younger years to lighter shades
+    const colorScale = d3.scaleLinear()
+        .domain([minYear, maxYear])
+        .range(["#333", "#eee"]); // Darker to lighter shades
+
+    // Apply the color scale to the points based on the year
     vis.Dots.attr("fill", d => {
-      // Extract year from date_time field
-      const year = new Date(d.date_time).getFullYear();
-      // Assign color based on year
-      // You can define your own color scale here
-      // For demonstration, let's say we use blue for even years and red for odd years
-      return year % 2 === 0 ? "blue" : "red";
+        // Extract year from date_time field
+        const year = new Date(d.date_time).getFullYear();
+        // Map year to color using the color scale
+        return colorScale(year);
     });
   }
 

@@ -283,3 +283,89 @@ class LeafletMap {
  
   }
 }
+
+// class LeafletMap {
+
+//   /**
+//    * Class constructor with basic configuration
+//    * @param {Object}
+//    * @param {Array}
+//    */
+//   constructor(_config, _data) {
+//     this.config = {
+//       parentElement: _config.parentElement,
+//     }
+//     this.data = _data;
+//     this.initVis();
+//     this.initUI(); // Call method to initialize UI
+//   }
+  
+//   /**
+//    * We initialize scales/axes and append static elements, such as axis titles.
+//    */
+//   initVis() {
+//     let vis = this;
+
+//     //ESRI
+//     vis.esriUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+//     vis.esriAttr = 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community';
+
+//     // Initialize Leaflet map
+//     vis.theMap = L.map('my-map').setView([37.8, -96], 3.25);
+
+//     // Base layer
+//     vis.base_layer = L.tileLayer(vis.esriUrl, {
+//       id: 'esri-image',
+//       attribution: vis.esriAttr,
+//       ext: 'png'
+//     }).addTo(vis.theMap);
+
+//     // Initialize SVG overlay
+//     // vis.overlay = L.d3SvgOverlay(svg => {
+//     //   vis.svg = svg;
+//     //   vis.g = svg.append('g');
+//     //   vis.brush = d3.brush().on('brush', brushed);
+//     //   vis.g.call(vis.brush);
+//     // }).addTo(vis.theMap);
+//     // Initialize SVG overlay
+// vis.overlay = L.d3SvgOverlay(function (selection, projection) {
+//   vis.svg = selection;
+//   vis.g = selection.append('g');
+//   vis.brush = d3.brush().on('brush', brushed);
+//   vis.g.call(vis.brush);
+// }).addTo(vis.theMap);
+
+
+//     // Initialize D3 visualization
+//     vis.updateVis();
+
+//     // Brushing function
+//     function brushed() {
+//       const selection = d3.event.selection;
+//       const selectedPoints = vis.data.filter(d => {
+//         const [x, y] = vis.theMap.latLngToLayerPoint([d.latitude, d.longitude]);
+//         return x >= selection[0][0] && x <= selection[1][0] && y >= selection[0][1] && y <= selection[1][1];
+//       });
+//       // Do something with selectedPoints, e.g., update another visualization
+//     }
+//   }
+
+//   updateVis() {
+//     let vis = this;
+
+//     // Update D3 visualization based on map state, e.g., zoom level, pan
+//     // Example:
+//     vis.g.selectAll('circle')
+//       .data(vis.data)
+//       .join('circle')
+//       .attr('cx', d => vis.theMap.latLngToLayerPoint([d.latitude, d.longitude]).x)
+//       .attr('cy', d => vis.theMap.latLngToLayerPoint([d.latitude, d.longitude]).y)
+//       .attr('r', 3)
+//       .attr('fill', 'steelblue')
+//       .attr('stroke', 'black');
+//   }
+
+//   initUI() {
+//     // Add UI elements, if needed
+//   }
+// }

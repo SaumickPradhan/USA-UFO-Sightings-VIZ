@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Interactive map with Leaflet</title>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
     <link rel="icon" href="data:;base64,iVBORwOKGO=" />
     <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
@@ -20,12 +22,16 @@
         <button id="colorByTimeOfDay">Color by Time of Day</button>
     </div>
 
+    <div id="container"></div>
+
+
     <!-- Tooltip container -->
     <div id="tooltip" style="position: absolute; opacity: 0; pointer-events: none;"></div>
 
     <script src="js/d3.v6.min.js"></script>
     <script src="js/leaflet.js"></script>
     <script src="js/main.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/leaflet-d3-svg-overlay@2.0.1/dist/leaflet-d3-svg-overlay.min.js"></script> -->
     <script src="js/leafletMap.js"></script>
 </body>
 </html>

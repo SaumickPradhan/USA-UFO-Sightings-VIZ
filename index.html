@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UFO Sightings Timeline</title>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <link rel="stylesheet" href="leaflet.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles only for the timeline */
+        .tooltip-timeline {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            pointer-events: none;
+            display: none;
+        }
+
+        #map-container {
+            position: relative;
+            margin-top: 50px; /* Adjust margin-top as needed */
+        }
+
+        #my-map {
+            height: 400px; /* Adjust map height as needed */
+            width: 100%;
+        }
+
+        #colorByOptions {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000; /* Ensure the UI is on top of the map */
+        }
+
+        #colorByOptions button {
+            margin-right: 10px;
+        }
+
+        #timeline-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #timeline, #scatter-plot, #bar-chart, #hourly-chart, #encounter-length-chart {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px; /* Adjust margin-top as needed */
+            width: 100%;
+        }
+
+        .bar:hover {
+            fill: #45a049;
+        }
+
+        .x-axis text {
+            font-size: 12px;
+        }
+
+        .y-axis text {
+            font-size: 12px;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+    </style>
+</head>
+<body>
+    <h1>UFO Sightings</h1>
+    
+    <div id="map-container">
+        <div id="my-map"></div>
+        <label for="select-attribute-1">Select Attribute 1:</label>
+        <select name="select-attribute-1" id="select-attribute-1"></select>
+        <!-- UI for 'color by' options -->
+        <div id="colorByOptions">
+            <button id="colorByYear">Color by Year</button>
+            <button id="colorByMonth">Color by Month</button>
+            <button id="colorByTimeOfDay">Color by Time of Day</button>
+        </div>
+    </div>
+
+    
+    <div id="timeline-container">
+        <!-- Timeline tooltip container -->
+        <div id="tooltip-timeline" class="tooltip"></div>
+        <svg id="timeline" width="100%" height="300"></svg> 
+        <svg id="scatter-plot" width="100%" height="200"></svg>
+        <svg id="bar-chart" width="100%" height="200"></svg>
+        <svg id="hourly-chart" width="100%" height="200" style="margin-top: 20px;"></svg>
+        <svg id="encounter-length-chart" width="100%" height="400" style="margin-top: 20px;"></svg> 
+    </div>
+
+    <div id="container"></div>
+    <!-- Tooltip container -->
+    <div id="tooltip" style="position: absolute; opacity: 0; pointer-events: none;"></div>
+    
+
+    <script>
+        // Load the data and handle tooltip events
+        d3.csv("ufo_sightings_NMV.csv").then(function(data) {
+            // Your existing JavaScript code for the timeline and tooltip events
+        }).catch(function(error) {
+            console.log("Error loading the data: " + error);
+        });
+    </script>
+
+    <!-- Include D3 library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Include separate JavaScript files -->
+    <script src="ufo_sightings.js"></script>
+    <script src="ufo_seasonal_patterns.js"></script>
+    <script src="ufo_shape.js"></script>
+    <script src="ufo_day_trends.js"></script>
+    <script src="ufo_encounter.js"></script> 
+    <script src="leaflet.js"></script>
+    <script src="main.js"></script>
+    <script src="leafletMap.js"></script>
+
+    
+            
+    
+    
+</body>
+</html>

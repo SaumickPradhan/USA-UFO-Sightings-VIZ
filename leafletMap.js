@@ -204,7 +204,7 @@ class LeafletMap {
       const colorByYearButton = document.getElementById('colorByYear');
       const colorByMonthButton = document.getElementById('colorByMonth');
       const colorByTimeOfDayButton = document.getElementById('colorByTimeOfDay');
-    
+      const colorPointsByUFOshapeButton = document.getElementById('colorByUFOshape');
       // Event listeners for 'color by' options
       colorByYearButton.addEventListener('click', () => {
         vis.colorPointsByYear();
@@ -216,6 +216,10 @@ class LeafletMap {
     
       colorByTimeOfDayButton.addEventListener('click', () => {
         vis.colorPointsByTimeOfDay();
+      });
+
+      colorPointsByUFOshapeButton.addEventListener('click', () => {
+        vis.colorPointsByUFOshape();
       });
     }
   
@@ -275,6 +279,17 @@ class LeafletMap {
         else if (hour >= 18 && hour < 21) return "red"; // Evening
         else return "blue"; // Night
       });
+    }
+
+    colorPointsByUFOshape() {
+      let vis = this;
+
+      const colorScale = d3.scaleOrdinal()
+    .domain(vis.data.map(d => d.ufo_shape))
+    .range(d3.schemeCategory10);
+
+  // Apply the color scale to the points based on UFO shape
+  vis.Dots.attr("fill", d => colorScale(d.ufo_shape));
     }
 
     updateVisByDateRange(dateRange) {

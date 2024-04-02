@@ -314,7 +314,60 @@ class LeafletMap {
           this.updateVisByDateRange(dateRange);
       });
   }
-  
+
+  updateMapWithFilteredData(filteredData) {
+    let vis = this;
+
+    // Clear existing dots
+    vis.Dots.remove();
+
+    // Draw only the filtered points
+    vis.Dots = vis.svg.selectAll('circle')
+        .data(filteredData)
+        .join('circle')
+        .attr("fill", "white") // Set color for filtered points
+        .attr("stroke", "black")
+        .attr("cx", d => vis.theMap.latLngToLayerPoint([d.latitude, d.longitude]).x)
+        .attr("cy", d => vis.theMap.latLngToLayerPoint([d.latitude, d.longitude]).y)
+        .attr("r", vis.radiusSize)
+        .on('mouseover', function(event, d) { //function to add mouseover event
+          console.log(d)
+          d3.select(this).transition() //D3 selects the object we have moused over in order to perform operations on it
+              .duration('150') //how long we are transitioning between the two states (works like keyframes)
+              .attr("fill", "red") //change the fill
+              .attr('r', 4); //change radius
+
+          //create a tool tip
+          d3.select('#tooltip')
+              .style('opacity', 1)
+              .style('z-index', 1000000)
+              // Format number with million and thousand separator
+              .html(`<div class="tooltip-label"><b>Frequently Used Word :</b> ${d.word}</div>`);
+      })
+      .on('mousemove', (event) => {
+          //position the tooltip
+          d3.select('#tooltip')
+              .style('left', (event.pageX + 10) + 'px')
+              .style('top', (event.pageY + 10) + 'px');
+      })
+      .on('mouseleave', function() { //function to add mouseover event
+          d3.select(this).transition() //D3 selects the object we have moused over in order to perform operations on it
+              .duration('150') //how long we are transitioning between the two states (works like keyframes)
+              .attr("fill", "steelblue") //change the fill
+              .attr('r', 3); //change radius
+
+          d3.select('#tooltip').style('opacity', 0); //turn off the tooltip
+      })
+      .on('click', (event, d) => {
+          // Click event handling
+      });
+
+
+    // Add zoomend event listener to update visualization on zoom
+    // vis.theMap.on("zoomend", () => {
+    //     vis.updateVis(selectedAttribute);
+    // });
+}
     renderVis() {
       let vis = this;
   

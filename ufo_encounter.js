@@ -27,7 +27,7 @@ d3.csv("ufo_sightings_NMV.csv").then(function(data) {
     }));
 
     // Set up SVG dimensions
-    const margin = { top: 20, right: 30, bottom: 40, left: 60 };
+    const margin = { top: 20, right: 30, bottom: 40, left: 100 };
     const width = 1200 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
@@ -50,8 +50,7 @@ d3.csv("ufo_sightings_NMV.csv").then(function(data) {
         .nice()
         .range([height, 0]);
 
-    // Draw bars with red color
-    svg.selectAll(".bar")
+        svg.selectAll(".bar")
         .data(counts)
         .enter().append("rect")
         .attr("class", "bar")
@@ -59,8 +58,9 @@ d3.csv("ufo_sightings_NMV.csv").then(function(data) {
         .attr("width", width / counts.length)
         .attr("y", d => y(d.count))
         .attr("height", d => height - y(d.count))
-        .attr("fill", "steelblue"); 
-
+        .attr("fill", "steelblue") // Change the fill color here
+        .attr("stroke", "black") // Add outline color
+        .attr("stroke-width", 1); // Specify outline width
     // Add X axis
     svg.append("g")
         .attr("class", "x-axis")
@@ -77,7 +77,7 @@ d3.csv("ufo_sightings_NMV.csv").then(function(data) {
         .attr("x", width / 2)
         .attr("y", height + margin.top + 10)
         .style("text-anchor", "middle")
-        .text("Encounter Length Ranges");
+        .text("Encounter Length Ranges (Time)");
 
     // Add Y axis label
     svg.append("text")
@@ -91,10 +91,10 @@ d3.csv("ufo_sightings_NMV.csv").then(function(data) {
     // Add title
     svg.append("text")
         .attr("x", width / 2)
-        .attr("y", -margin.top / 2)
-        .attr("text-anchor", "middle")
-        .style("font-size", "16px")
-        .text("Frequency of UFO Sightings by Encounter Length");
+        .attr("y", margin.top / 2)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "22px") 
+        .text("Frequency of Sightings by Encounter Length");
 
     // Create a brush
     const brush = d3.brushX()

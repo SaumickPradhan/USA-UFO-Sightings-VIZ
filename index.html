@@ -34,7 +34,7 @@
 
         #colorByOptions {
             position: absolute;
-            top: 10px;
+            top: -30px;
             left: 10px;
             z-index: 1000; /* Ensure the UI is on top of the map */
         }
@@ -76,10 +76,43 @@
             stroke: #000;
             shape-rendering: crispEdges;
         }
+
+        #refreshButton {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    #refreshButton:hover {
+        background-color: #45a049;
+    }
+
+
     </style>
 </head>
 <body>
-    <h1>UFO Sightings</h1>
+    <div style="text-align: center;">
+        <div class="heading">
+        <h1>UFO Sightings in United States</h1>  
+         <h2>The Truth is Out There!</h2>
+          <h3>Presented by Saumick Pradhan, Nachiket Dighe, Om Gaikwad, Ameya Deshmukh</h3>
+          <p>
+            Data Sourced from the
+            <a href="https://nuforc.org/">National UFO Reporting Center</a>
+          </p>
+          <p>Libraries used:
+            <a href="https://d3js.org/">D3 JavaScript library</a>, <a
+              href="https://leafletjs.com/">leaflet</a> and <a href="https://github.com/jasondavies/d3-cloud">D3 Word Cloud</a>
+          </p>
+        </div>
     <button id="refreshButton">Refresh Data</button>
     <script>
 
@@ -109,9 +142,10 @@
         <div id="tooltip-timeline" class="tooltip"></div>
         <svg id="timeline" width="100%" height="300"></svg> 
         <svg id="scatter-plot" width="100%" height="200"></svg>
-        <svg id="bar-chart" width="100%" height="200"></svg>
         <svg id="hourly-chart" width="100%" height="200" style="margin-top: 20px;"></svg>
         <svg id="encounter-length-chart" width="100%" height="400" style="margin-top: 20px;"></svg> 
+        <svg id="bar-chart" width="100%" height="200"></svg>
+
     </div>
 
     <div id="container"></div>

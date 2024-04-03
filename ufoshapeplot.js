@@ -63,7 +63,7 @@ class UFOShapePlot {
             .attr('y', d => vis.yScale(d.count))
             .attr('width', vis.xScale.bandwidth())
             .attr('height', d => vis.height - vis.margin.bottom - vis.margin.top - vis.yScale(d.count))
-            .attr('fill', 'steelblue');
+            .attr('fill', '#20C593');
 
         // Draw axes
         vis.svg.append('g')

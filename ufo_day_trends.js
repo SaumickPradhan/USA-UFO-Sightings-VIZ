@@ -22,7 +22,7 @@ function createHourlyTrends(data) {
   const hourlyCounts = Array.from(sightingsByHour, ([hour, sightings]) => ({ hour, count: sightings.length }));
 
   // Set up SVG dimensions
-  const margin = { top: 50, right: 30, bottom: 60, left: 60 }; // Adjusted margins
+  const margin = { top: 50, right: 30, bottom: 60, left: 80 }; // Adjusted margins
   const width = 1200 - margin.left - margin.right;
   const height = 300 - margin.top - margin.bottom; // Adjusted height
 
@@ -45,15 +45,24 @@ function createHourlyTrends(data) {
     .nice()
     .range([height, 0]);
 
-  // Draw bars
-  svg.selectAll("rect")
+    svg.selectAll("rect")
     .data(hourlyCounts)
     .enter().append("rect")
     .attr("x", d => x(d.hour))
     .attr("y", d => y(d.count))
     .attr("width", (width / 24)) // Divide width equally among 24 hours
     .attr("height", d => height - y(d.count))
-    .attr("fill", "steelblue");
+    .attr("fill", "#20C593")
+    .attr("stroke", "#000") // Add outline color
+    .attr("stroke-width", 1); // Specify outline width
+
+    svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", -margin.top / 2)
+    .attr("text-anchor", "middle")
+    .style("font-size", "22px")
+    .text("Sightings Throughout The Day");
+
   // Add X axis
   svg.append("g")
     .attr("class", "x-axis")
@@ -67,10 +76,10 @@ function createHourlyTrends(data) {
 
   // Add labels for axes
   svg.append("text")
-    .attr("x", width / 2)
-    .attr("y", height + margin.top + 20)
+    .attr("x", width / 2 + 10)
+    .attr("y", height + margin.top)
     .attr("text-anchor", "middle")
-    .text("Hour of the Day");
+    .text("Time of the Day (Hours)");
 
   svg.append("text")
     .attr("transform", "rotate(-90)")
@@ -78,7 +87,7 @@ function createHourlyTrends(data) {
     .attr("y", -margin.left)
     .attr("dy", "1em")
     .attr("text-anchor", "middle")
-    .text("Sightings");
+    .text("Sightings (Number)");
 
   // Tooltip
   const tooltip = d3.select("#tooltip");

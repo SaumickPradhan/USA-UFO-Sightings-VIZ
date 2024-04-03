@@ -11,9 +11,30 @@ d3.csv("ufo_sightings_NMV.csv").then(function(data) {
 
     // Convert map to array for easier manipulation
     const timelineData = Array.from(sightingsByMonth, ([key, value]) => ({ month: key, sightings: value }));
-
+    console.log(timelineData);
     // Sort timelineData by month
     timelineData.sort((a, b) => a.month - b.month);
+
+    const sightingsByMonthWithCoords = timelineData.map(monthData => {
+    // Filter original data for sightings in this month
+    const sightingsInMonth = data.filter(d => {
+        const sightingMonth = d3.timeMonth(parseDate(d.date_time)).getMonth();
+        return sightingMonth === monthData.month;
+    });
+
+    // Extract latitude and longitude for each sighting
+    const sightingsCoords = sightingsInMonth.map(sighting => ({
+        latitude: sighting.latitude,
+        longitude: sighting.longitude
+    }));
+
+    return {
+        month: monthData.month,
+        sightingsCoords: sightingsCoords
+    };
+});
+
+console.log(sightingsByMonthWithCoords);
 
     // Set up SVG and margins for bar graph
     const marginBarGraph = { top: 20, right: 20, bottom: 50, left: 50 };
@@ -29,7 +50,7 @@ d3.csv("ufo_sightings_NMV.csv").then(function(data) {
     // Define xScaleBarGraph using scaleBand
 
     const xScaleBarGraph = d3.scaleBand()
-        .domain(timelineData.map(d => d.month)) // Assuming timelineData contains months
+        .domain(timelineData.map(d => d.month+1)) // Assuming timelineData contains months
         .range([0, widthBarGraph])
         .padding(0.1);
 
@@ -43,7 +64,7 @@ d3.csv("ufo_sightings_NMV.csv").then(function(data) {
     svgBarGraph.selectAll("rect")
         .data(timelineData)
         .enter().append("rect")
-        .attr("x", d => xScaleBarGraph(d.month))
+        .attr("x", d => xScaleBarGraph(d.month+1))
         .attr("y", d => yScaleBarGraph(d.sightings))
         .attr("width", xScaleBarGraph.bandwidth())
         .attr("height", d => heightBarGraph - yScaleBarGraph(d.sightings))
@@ -87,29 +108,57 @@ d3.csv("ufo_sightings_NMV.csv").then(function(data) {
         .attr("class", "brush")
         .call(brush);
 
+    // function brushed(event) {
+    //     const selection = event.selection; // Access the brush selection
+
+    //     if (!selection) return; // If no selection, return
+
+    //     // Get the pixel coordinates of the brush selection
+    //     const [x0, x1] = selection;
+
+    //     // Calculate the domain values based on pixel coordinates
+    //     const domainX0 = xScaleBarGraph.domain()[Math.round(x0 / xScaleBarGraph.step())];
+    //     const domainX1 = xScaleBarGraph.domain()[Math.round(x1 / xScaleBarGraph.step())];
+    //     console.log(domainX0, domainX1);
+
+    //     // Filter data based on selected bars
+    //     var filteredData = timelineData.filter(d => {
+    //         var month = d.month;
+    //         return month >= domainX0 && month <= domainX1;
+    //     });
+
+    //     // Update the Leaflet map with filtered data
+    //     leafletMap.updateMapWithFilteredData(filteredData);
+    // }
+
+
     function brushed(event) {
         const selection = event.selection; // Access the brush selection
-
+    
         if (!selection) return; // If no selection, return
-
+    
         // Get the pixel coordinates of the brush selection
         const [x0, x1] = selection;
-
+    
         // Calculate the domain values based on pixel coordinates
         const domainX0 = xScaleBarGraph.domain()[Math.round(x0 / xScaleBarGraph.step())];
         const domainX1 = xScaleBarGraph.domain()[Math.round(x1 / xScaleBarGraph.step())];
+        console.log(domainX0, domainX1);
 
-
-        // Filter data based on selected bars
-        const filteredData = timelineData.filter(d => {
-            const month = d.month;
-            return month >= domainX0 && month <= domainX1;
-        });
-
+        if (typeof domainX1 === 'undefined') {
+            domainX1 = 12;
+        }
+    
+        // Find the corresponding month data in sightingsByMonthWithCoords
+        const filteredMonthData = sightingsByMonthWithCoords.filter(d => d.month >= domainX0 && d.month <= domainX1);
+    
+        // Extract latitude and longitude coordinates from the filtered month data
+        const filteredCoords = filteredMonthData.flatMap(d => d.sightingsCoords);
+    
         // Update the Leaflet map with filtered data
-        leafletMap.updateMapWithFilteredData(filteredData);
+        leafletMap.NewupdateMapWithFilteredData(filteredCoords);
     }
-
+    
 
 
 

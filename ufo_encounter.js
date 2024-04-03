@@ -59,7 +59,7 @@ d3.csv("ufo_sightings_NMV.csv").then(function(data) {
         .attr("width", width / counts.length)
         .attr("y", d => y(d.count))
         .attr("height", d => height - y(d.count))
-        .attr("fill", "magenta"); // Change the fill color here
+        .attr("fill", "steelblue"); 
 
     // Add X axis
     svg.append("g")

@@ -74,7 +74,7 @@ d3.csv("ufo_sightings_NMV.csv").then(function(data) {
         .attr("y", d => yScale(d.sightings))
         .attr("width", width / timelineData.length)
         .attr("height", d => height - yScale(d.sightings))
-        .style("fill", "blue") 
+        .style("fill", "steelblue") 
         .on("mouseover", handleMouseOver)
         .on("mouseout", handleMouseOut);
 

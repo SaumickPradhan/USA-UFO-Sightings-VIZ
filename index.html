@@ -80,6 +80,15 @@
 </head>
 <body>
     <h1>UFO Sightings</h1>
+    <button id="refreshButton">Refresh Data</button>
+    <script>
+
+        document.getElementById('refreshButton').addEventListener('click', function() {
+            // Perform actions to refresh data, e.g., reload the page or fetch new data
+            location.reload(); // This will reload the page
+            // You can also add additional actions here as needed
+        });
+    </script>
     
     <div id="map-container">
         <div id="my-map"></div>

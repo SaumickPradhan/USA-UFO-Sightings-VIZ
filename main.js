@@ -149,7 +149,7 @@ d3.csv('ufo_sightings_NMV.csv')
 //   });
 Promise.all([
 d3.csv("most_common_words.csv"),
-d3.csv("word_coordinates.csv")
+d3.csv("word_coordinates1.csv")
 ]).then(function(data) {
   var wordData = data[0]; // UFO sighting data
   var wordCoord = data[1]; // Word frequency data

@@ -186,24 +186,57 @@ wordCoord.forEach(function(d) {
 //   leafletMap.updateMapWithFilteredData(filteredData);
 // });
 
- var chart = anychart.tagCloud(wordCloudData);
+// var colorScale = d3.scaleLinear()
+//         .domain([d3.min(wordCloudData, d => d.value), d3.max(wordCloudData, d => d.value)])
+//         .range(["#fee0d2", "#f16913"]);
 
-  // Set a chart title
-  chart.title('Most Common Words');
+//  var chart = anychart.tagCloud(wordCloudData);
 
-  // Set an array of angles at which the words will be laid out
-  chart.angles(0, -45, 90);
+//  chart.colorScale(colorScale);
 
-  // Enable a color range
-  chart.colorRange(true);
 
-  // Set the color range length
-  chart.colorRange().length('80%');
+//   // Set a chart title
+//   chart.title('Most Common Words');
 
-  // Display the word cloud chart
-  chart.container("container");
-  chart.draw();
+//   // Set an array of angles at which the words will be laid out
+//   chart.angles(0, -45, 90);
+
+//   // Enable a color range
+//   chart.colorRange(true);
+
+//   // Set the color range length
+//   chart.colorRange().length('80%');
+
+//   // Display the word cloud chart
+//   chart.container("container");
+//   chart.draw();
+
 // Event only works for the top 10 words, as the dataset is missing the other coordinates
+// Has been Fixed
+
+var colorScale = d3.scaleLinear()
+.domain([d3.min(wordCloudData, d => d.value), d3.max(wordCloudData, d => d.value)])
+.range(["black", "white"]); // Define your color range here
+
+// Create word cloud using word frequency data and color scale
+var chart = anychart.tagCloud(wordCloudData);
+chart.colorScale(colorScale);
+
+// Set a chart title
+chart.title('Most Common Words');
+
+// Set an array of angles at which the words will be laid out
+chart.angles(0, -45, 90);
+
+// Enable a color range
+chart.colorRange(true);
+
+// Set the color range length
+chart.colorRange().length('80%');
+
+// Display the word cloud chart
+chart.container("container");
+chart.draw();
 
   // Event listener for word cloud selection
   chart.listen("pointClick", function(e) {

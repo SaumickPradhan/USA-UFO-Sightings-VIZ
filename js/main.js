@@ -105,3 +105,48 @@ chart.draw();
 
 });
 
+// d3.csv("word_coordinates.csv").then(function(data) {
+//   // Log the loaded data
+//   console.log(data);
+
+//   // Initialize word cloud data
+//   var wordCloudData = data.map(function(d) {
+//       return {
+//           "word": d.Word,
+//           "latitude": parseFloat(d.Latitude), // Parse latitude as float
+//           "longitude": parseFloat(d.Longitude) // Parse longitude as float
+//       };
+//   });
+
+//   // Create a tag (word) cloud chart
+//   var chart = anychart.tagCloud(wordCloudData);
+
+//   // Set a chart title
+//   chart.title('Most Common Words');
+
+//   // Set an array of angles at which the words will be laid out
+//   chart.angles(0, -45, 90);
+
+//   // Enable a color range
+//   chart.colorRange(true);
+
+//   // Set the color range length
+//   chart.colorRange().length('80%');
+
+//   // Display the word cloud chart
+//   chart.container("container");
+//   chart.draw();
+
+//   // Event listener for word cloud selection
+//   chart.listen("pointClick", function(e) {
+//       // Filter data based on the selected word
+//       var selectedWord = e.point.get("x");
+//       var filteredData = wordCloudData.filter(function(d) {
+//           return d.word === selectedWord;
+//       });
+
+//       // Update Leaflet map visualization with filtered data
+//       leafletMap.updateMapWithFilteredData(filteredData);
+//   });
+// });
+

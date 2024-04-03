@@ -188,6 +188,7 @@ class LeafletMap {
 
   }
 
+
   initUI() {
     let vis = this;
   

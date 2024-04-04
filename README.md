@@ -184,11 +184,41 @@ website.
 
 <details>
   <summary><b>7. New Views</b> </summary>
-  <b>Using Histograms and Bar charts to show the data depending on the selected attribute</b>
+ <details>
+  <summary><b>Bar chart for sightings by Months, depicting seasons</b></summary>
 
-<img width="1215" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/6be3575b-f49c-4c62-99e0-546d5913d19c">
+  **Reason:** We did not have different colors for seasons as different places have different seasons. Wanted to depict clear frequency change hence decided to go with bar chart.
 
-<img width="579" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/39ab975c-60fa-40f9-b4b1-e4446e64ce99">
+<img width="737" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/cdc689d2-f753-442b-8041-b349f4986fa1">
+
+</details>
+
+ <details>
+  <summary><b>Histogram chart for frequency of sightings different times during the day</b></summary>
+
+  **Reason:** Histogram helps with coninuous time intervals throughout the day. 24 hour timing used as it is universal.
+
+<img width="1083" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/80c649ab-f2f5-4ce0-bb9f-6dec58bd80cf">
+
+</details>
+
+ <details>
+  <summary><b>Histogram chart for frequency of sightings by encounter length</b></summary>
+
+  **Reason:** Handled very short durations by clubbing them into custom sections (bars) of intervals
+
+<img width="1167" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/6c3a665f-594f-4ee1-b055-2e34d5188cf8">
+
+</details>
+
+ <details>
+  <summary><b>Emoji based scatter plot to track frequency of occurance of different shapes</b></summary>
+
+  **Reason:** We wanted the user to see the different shapes represented in the plot to be intuitive.
+
+<img width="1066" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/14d3a6e7-75ec-4a8c-8b59-41a6e03f2f87">
+
+</details>
 
 <details>
 <summary><b>Details on Demand using Tool Tip</b></summary>

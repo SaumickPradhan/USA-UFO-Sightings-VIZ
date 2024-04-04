@@ -6,7 +6,7 @@ d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
     });
 
     // Define encounter length ranges (in seconds)
-    window.lengthRanges = [
+    const lengthRanges = [
         { range: [0, 60], label: "0-60s" },
         { range: [61, 300], label: "1-5m" },
         { range: [301, 600], label: "5-10m" },
@@ -27,7 +27,7 @@ d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
     }));
 
     // Set up SVG dimensions
-    const margin = { top: 20, right: 30, bottom: 40, left: 60 };
+    const margin = { top: 20, right: 30, bottom: 40, left: 200 };
     const width = 1200 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
@@ -38,11 +38,11 @@ d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    // X scale (length ranges)
-    const x = d3.scaleBand()
-        .domain(counts.map(d => d.label))
+    // Define x scale
+    const x = d3.scaleLinear()
+        .domain([0, counts.length - 1])
         .range([0, width])
-        .padding(0.1);
+        .nice();
 
     // Y scale (counts)
     const y = d3.scaleLinear()
@@ -50,22 +50,22 @@ d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
         .nice()
         .range([height, 0]);
 
-    // Draw bars with red color
-    svg.selectAll(".bar")
+        svg.selectAll(".bar")
         .data(counts)
         .enter().append("rect")
         .attr("class", "bar")
-        .attr("x", d => x(d.label))
-        .attr("width", x.bandwidth())
+        .attr("x", (d, i) => x(i))
+        .attr("width", width / counts.length)
         .attr("y", d => y(d.count))
         .attr("height", d => height - y(d.count))
-        .attr("fill", "magenta"); // Change the fill color here
-
+        .attr("fill", "steelblue") // Change the fill color here
+        .attr("stroke", "black") // Add outline color
+        .attr("stroke-width", 1); // Specify outline width
     // Add X axis
     svg.append("g")
         .attr("class", "x-axis")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+        .call(d3.axisBottom(x).tickFormat(i => counts[i].label));
 
     // Add Y axis
     svg.append("g")
@@ -77,13 +77,13 @@ d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
         .attr("x", width / 2)
         .attr("y", height + margin.top + 10)
         .style("text-anchor", "middle")
-        .text("Encounter Length Ranges");
+        .text("Encounter Length Ranges (Time)");
 
     // Add Y axis label
     svg.append("text")
         .attr("transform", "rotate(-90)")
         .attr("x", -height / 2)
-        .attr("y", -margin.left)
+        .attr("y", 120-margin.left)
         .attr("dy", "1em")
         .style("text-anchor", "middle")
         .text("Frequency");
@@ -91,10 +91,50 @@ d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
     // Add title
     svg.append("text")
         .attr("x", width / 2)
-        .attr("y", -margin.top / 2)
-        .attr("text-anchor", "middle")
-        .style("font-size", "16px")
-        .text("Frequency of UFO Sightings by Encounter Length");
+        .attr("y", margin.top / 2)
+        .attr("text-anchor", "middle")  
+        .style("font-size", "22px") 
+        .text("Frequency of Sightings by Encounter Length");
+
+    // Create a brush
+    const brush = d3.brushX()
+        .extent([[0, 0], [width, height]])
+        .on("end", event => brushed(x, data, event)); // Pass x scale and data to brushed function
+
+    // Append the brush to the svg
+    svg.append("g")
+        .attr("class", "brush")
+        .call(brush);
+
 }).catch(function(error) {
     console.log("Error loading the data: " + error);
 });
+
+// Define brushed function to accept x scale and data as arguments
+function brushed(x, data, event) {
+    if (!event.selection) return; // Ignore empty selections.
+
+    // Get the selected range
+    const selection = event.selection;
+    console.log("Selection:", selection);
+    console.log("x scale:", x);
+    if (!selection) return;
+
+    // Check if the invert method is defined
+    if (typeof x.invert !== 'function') {
+        console.error("x scale invert method is not defined:", x);
+        return;
+    }
+
+    const [x0, x1] = selection.map(x.invert);
+    console.log("x0:", x0, "x1:", x1);
+
+    // Filter data based on the selected range
+    const filteredData = data.filter(d => {
+        const encounterLength = +d.encounter_length;
+        return encounterLength >= x0 && encounterLength <= x1;
+    });
+
+    // Update Leaflet map with filtered data
+    leafletMap.updateMapWithFilteredData(filteredData);
+}

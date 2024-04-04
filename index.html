@@ -8,8 +8,8 @@
     <!-- Include D3 library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="icon" href="data:;base64,iVBORwOKGO=" />
-    <link rel="stylesheet" href="leaflet.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         /* Additional styles only for the timeline */
         .tooltip-timeline {
@@ -197,7 +197,7 @@
 
     <script>
         // Load the data and handle tooltip events
-        d3.csv("ufo_sightings_NMV.csv").then(function(data) {
+        d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
             // Your existing JavaScript code for the timeline and tooltip events
         }).catch(function(error) {
             console.log("Error loading the data: " + error);
@@ -207,14 +207,14 @@
     
 
     <!-- Include separate JavaScript files -->
-    <script src="ufo_sightings.js"></script>
-    <script src="ufo_seasonal_patterns.js"></script>
-    <script src="ufo_shape.js"></script>
-    <script src="ufo_day_trends.js"></script>
-    <script src="ufo_encounter.js"></script> 
-    <script src="leaflet.js"></script>
-    <script src="main.js"></script>
-    <script src="leafletMap.js"></script>
+    <script src="js/ufo_sightings.js"></script>
+    <script src="js/ufo_seasonal_patterns.js"></script>
+    <script src="js/ufo_shape.js"></script>
+    <script src="js/ufo_day_trends.js"></script>
+    <script src="js/ufo_encounter.js"></script> 
+    <script src="js/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/leafletMap.js"></script>
 
     
             

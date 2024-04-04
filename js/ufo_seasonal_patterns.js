@@ -8,71 +8,149 @@ d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
         v => v.length, 
         d => d3.timeMonth(parseDate(d.date_time)).getMonth()
     );
-    console.log("Sightings by month:", sightingsByMonth);
 
     // Convert map to array for easier manipulation
     const timelineData = Array.from(sightingsByMonth, ([key, value]) => ({ month: key, sightings: value }));
-
+    console.log(timelineData);
     // Sort timelineData by month
     timelineData.sort((a, b) => a.month - b.month);
 
-    // Set up SVG and margins for scatter plot
-    const marginScatterPlot = { top: 20, right: 20, bottom: 50, left: 50 };
-    const widthScatterPlot = 800 - marginScatterPlot.left - marginScatterPlot.right;
-    const heightScatterPlot = 400 - marginScatterPlot.top - marginScatterPlot.bottom;
+    const sightingsByMonthWithCoords = timelineData.map(monthData => {
+    // Filter original data for sightings in this month
+    const sightingsInMonth = data.filter(d => {
+        const sightingMonth = d3.timeMonth(parseDate(d.date_time)).getMonth();
+        return sightingMonth === monthData.month;
+    });
 
-    const svgScatterPlot = d3.select("#scatter-plot")
-        .attr("width", widthScatterPlot + marginScatterPlot.left + marginScatterPlot.right)
-        .attr("height", heightScatterPlot + marginScatterPlot.top + marginScatterPlot.bottom)
+    // Extract latitude and longitude for each sighting
+    const sightingsCoords = sightingsInMonth.map(sighting => ({
+        latitude: sighting.latitude,
+        longitude: sighting.longitude
+    }));
+
+    return {
+        month: monthData.month,
+        sightingsCoords: sightingsCoords
+    };
+});
+
+console.log(sightingsByMonthWithCoords);
+
+    // Set up SVG and margins for bar graph
+    const marginBarGraph = { top: 50, right: 20, bottom: 70, left: 200 };
+    const widthBarGraph = 800 - marginBarGraph.left - marginBarGraph.right;
+    const heightBarGraph = 400 - marginBarGraph.top - marginBarGraph.bottom;
+
+    const svgBarGraph = d3.select("#scatter-plot")
+        .attr("width", widthBarGraph + marginBarGraph.left + marginBarGraph.right)
+        .attr("height", heightBarGraph + marginBarGraph.top + marginBarGraph.bottom)
         .append("g")
-        .attr("transform", "translate(" + marginScatterPlot.left + "," + marginScatterPlot.top + ")");
+        .attr("transform", "translate(" + marginBarGraph.left + "," + marginBarGraph.top + ")");
 
-    // Define scales for scatter plot
-    const xScaleScatterPlot = d3.scaleBand()
-        .domain(timelineData.map(d => d.month))
-        .range([0, widthScatterPlot])
+    // Define xScaleBarGraph using scaleBand
+
+    const xScaleBarGraph = d3.scaleBand()
+        .domain(timelineData.map(d => d.month+1)) // Assuming timelineData contains months
+        .range([0, widthBarGraph])
         .padding(0.1);
 
-    const yScaleScatterPlot = d3.scaleLinear()
+
+    const yScaleBarGraph = d3.scaleLinear()
         .domain([0, d3.max(timelineData, d => d.sightings)])
         .nice()
-        .range([heightScatterPlot, 0]);
+        .range([heightBarGraph, 0]);
 
-    // Draw circles for scatter plot
-    svgScatterPlot.selectAll("circle")
-        .data(timelineData)
-        .enter().append("circle")
-        .attr("cx", d => xScaleScatterPlot(d.month) + xScaleScatterPlot.bandwidth() / 2)
-        .attr("cy", d => yScaleScatterPlot(d.sightings))
-        .attr("r", 5)
-        .attr("fill", "steelblue")
-        .attr("opacity", 0.7);
+    // Draw bars for bar graph
+    svgBarGraph.selectAll("rect")
+    .data(timelineData)
+    .enter().append("rect")
+    .attr("x", d => xScaleBarGraph(d.month + 1))
+    .attr("y", d => yScaleBarGraph(d.sightings))
+    .attr("width", xScaleBarGraph.bandwidth())
+    .attr("height", d => heightBarGraph - yScaleBarGraph(d.sightings))
+    .attr("fill", "steelblue")
+    .attr("stroke", "black") // Add outline color
+    .attr("stroke-width", 1); // Specify outline width
 
-    // Draw x-axis for scatter plot
-    svgScatterPlot.append("g")
+    // Append title to the graph
+svgBarGraph.append("text")
+.attr("x", (widthBarGraph / 2))             
+.attr("y", 0 - (marginBarGraph.top / 2))
+.attr("text-anchor", "middle")  
+.style("font-size", "22px") 
+.text("Sightings by Months (Seasons)");
+
+    // Draw x-axis for bar graph
+    svgBarGraph.append("g")
         .attr("class", "x-axis")
-        .attr("transform", "translate(0," + heightScatterPlot + ")")
-        .call(d3.axisBottom(xScaleScatterPlot));
+        .attr("transform", "translate(0," + heightBarGraph + ")")
+        .call(d3.axisBottom(xScaleBarGraph));
 
-    // Draw y-axis for scatter plot
-    svgScatterPlot.append("g")
+    // Draw y-axis for bar graph
+    svgBarGraph.append("g")
         .attr("class", "y-axis")
-        .call(d3.axisLeft(yScaleScatterPlot));
+        .call(d3.axisLeft(yScaleBarGraph));
 
-    // Add labels for scatter plot
-    svgScatterPlot.append("text")
-        .attr("x", widthScatterPlot / 2)
-        .attr("y", heightScatterPlot + marginScatterPlot.top + 20)
+    // Add labels for bar graph
+    svgBarGraph.append("text")
+        .attr("x", widthBarGraph / 2)
+        .attr("y", heightBarGraph + marginBarGraph.top )
         .attr("text-anchor", "middle")
         .text("Month");
 
-    svgScatterPlot.append("text")
+    svgBarGraph.append("text")
         .attr("transform", "rotate(-90)")
-        .attr("x", -heightScatterPlot / 2)
-        .attr("y", -marginScatterPlot.left)
+        .attr("x", -heightBarGraph / 2)
+        .attr("y", 120-marginBarGraph.left)
         .attr("dy", "1em")
         .attr("text-anchor", "middle")
-        .text("Sightings");
+        .text("Sightings (Number)");
+
+    // Inside the d3.csv callback function in ufo_seasonal_patterns.js
+
+    // Define a brush
+    const brush = d3.brushX()
+        .extent([[0, 0], [widthBarGraph, heightBarGraph]])
+        .on("end", brushed);
+
+    // Append the brush to the SVG
+    const gBrush = svgBarGraph.append("g")
+        .attr("class", "brush")
+        .call(brush);
+
+
+    function brushed(event) {
+        const selection = event.selection; // Access the brush selection
+    
+        if (!selection) return; // If no selection, return
+    
+        // Get the pixel coordinates of the brush selection
+        const [x0, x1] = selection;
+    
+        // Calculate the domain values based on pixel coordinates
+        const domainX0 = xScaleBarGraph.domain()[Math.round(x0 / xScaleBarGraph.step())];
+        const domainX1 = xScaleBarGraph.domain()[Math.round(x1 / xScaleBarGraph.step())];
+        console.log(domainX0, domainX1);
+
+        if (typeof domainX1 === 'undefined') {
+            domainX1 = 12;
+        }
+    
+        // Find the corresponding month data in sightingsByMonthWithCoords
+        const filteredMonthData = sightingsByMonthWithCoords.filter(d => d.month >= domainX0 && d.month <= domainX1);
+    
+        // Extract latitude and longitude coordinates from the filtered month data
+        const filteredCoords = filteredMonthData.flatMap(d => d.sightingsCoords);
+    
+        // Update the Leaflet map with filtered data
+        leafletMap.NewupdateMapWithFilteredData(filteredCoords);
+    }
+    
+
+
+
+
+
 
 }).catch(function(error) {
     console.log("Error loading the data: " + error);

@@ -17,7 +17,7 @@ d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
     const timelineData = Array.from(sightingsByMonth, ([key, value]) => ({ date: key, sightings: value }));
 
     // Set up SVG and margins
-    const margin = { top: 20, right: 20, bottom: 50, left: 50 };
+    const margin = { top: 35, right: 20, bottom: 50, left: 200 };
     const width = 1200 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
 
@@ -41,6 +41,13 @@ d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
     const xAxis = d3.axisBottom(xScale).ticks(d3.timeYear.every(10));
     const yAxis = d3.axisLeft(yScale);
 
+    // Append title to the graph
+svg.append("text")
+.attr("x", (width / 2))             
+.attr("y", 0 - (margin.top / 2))
+.attr("text-anchor", "middle")  
+.style("font-size", "22px") 
+.text("Timeline Over The Years");
     // Draw axes
     svg.append("g")
         .attr("class", "x-axis")
@@ -58,12 +65,12 @@ d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
         .call(yAxis)
         .append("text")
         .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left)
+        .attr("y", 150 - margin.left)
         .attr("x", 0 - (height / 2))
         .attr("dy", "1em")
         .attr("fill", "black")
         .style("text-anchor", "middle")
-        .text("Number of UFO Sightings");
+        .text("Sightings (Number)");
 
     // Draw bars
     svg.selectAll(".bar")
@@ -74,7 +81,7 @@ d3.csv("data/ufo_sightings_NMV.csv").then(function(data) {
         .attr("y", d => yScale(d.sightings))
         .attr("width", width / timelineData.length)
         .attr("height", d => height - yScale(d.sightings))
-        .style("fill", "blue") 
+        .style("fill", "#20C593") 
         .on("mouseover", handleMouseOver)
         .on("mouseout", handleMouseOut);
 

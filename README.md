@@ -404,26 +404,21 @@ README.md
  <details>
   <summary><b>Task Distribution</b></summary>
 
-  <b> All the sketches show above with their assigned creator. Here are the pages worked on by the Team:</b>
+  <b> Here are the components worked on by the Team:</b>
   
-  *  Login Page: Nehang
-  *  Linking Pages with Router: Nachiket
-  *  Dashboard Page: Saumick
-  *  Rewards Center: Saumick
-  *  Announcement Page: Nachiket
-  *  Progress Page: Saumick
-  *  Entire Framework and Navigation: Nachiket
-  *  Syllabus Page: Saumick
-  *  Module Page with levels: Nehang
-  *  Preview and Download feature: Nehang
-  *  Grades Page: Saumick
-  *  Assignment Page: Nehang
-  *  Zoom Page: Saumick
-  *  To do List Page: Nehang
-  *  Calendar Page: Nehang
-  *  Error handling: Nachiket
-  *  To the Future Button: Samuel
-  *  Three mock users array: Samuel
-  
-  <b> Saumick, Nachiket, Nehang worked on the document work. Samuel provided the A Goal sketches</b>
+  *  Introduction and Refresh: Saumick
+  *  Color By buttons: Nachiket
+  *  Leaflet Map and Re orientation: Saumick
+  *  Map Tool Tips: Saumick
+  *  Change maps by attribute: Saumick
+  *  Time Line + Brushing: Om
+  *  Sightings by Month + Brushing: Om
+  *  Sighting in a Day + Brushing: Om
+  *  Sightings by Encounter Length + Brushing: Saumick + Nachiket
+  *  Sightings by Shape + Brushing: Saumick
+  *  Word Cloud + Tool tips: Nachiket
+  *  CSS, coloring and formatting maps: Saumick
+  *  Documentation: Saumick + Nachiket
+  *  UI Sketches: Ameya
+    
  </details>

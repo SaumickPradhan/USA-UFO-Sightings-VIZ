@@ -1,9 +1,9 @@
-# Gamified-Canvas-ACan
+# UFO Sightings in United States
+## The Truth is Out There!
 
 
-**An Interactive GAMIFIED version of the UI/UX for Canvas LMS by Instructure**
+**A Interactive Data Visualization exploring the correlation between the Spatial distribution and Temporal occurrences of UFO sightings across the USA**
 
-<img width="1436" alt="Screen Shot 2023-11-14 at 7 21 46 PM" src="https://github.com/SaumickPradhan/Gamified-Canvas-ACan/assets/88009707/2a585a5a-bafb-4990-962d-4d7668da8ea5">
 
 
 

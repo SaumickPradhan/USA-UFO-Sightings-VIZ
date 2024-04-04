@@ -9,8 +9,8 @@ https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/704ce1f2
 <h2>Description</h2>
 
 <br>
-TBD ************
 
+In our project, "UFO Sightings in United States: The Truth is out there" , we embarked on a journey to explore and visualize a comprehensive dataset compiled by the National UFO Reporting Center. This dataset, spanning over a century of reports from around the world, offers a unique window into the collective human experience with the unexplained aerial phenomena. We filtered the comprehensive dataset to provide us with information about UFO sightings in the United States, and used that to analyze the data and displayed it using a Leaflet map, along with 4 charts and a word cloud.
 
 <h2>Video Presentation</h2>
 
@@ -71,21 +71,18 @@ For the scope of the project we decided to focus on the USA UFO sightings which 
 <details>
 <summary> <b> Introduction </b>
 
-In our project, "UFO Sightings in United States: The Truth is out there" , we embarked on a journey to explore and visualize a comprehensive dataset compiled by the National UFO Reporting Center. This dataset, spanning over a century of reports from around the world, offers a unique window into the collective human experience with the unexplained aerial phenomena. We filtered the comprehensive dataset to provide us with information about UFO sightings in the United States, and used that to analyze the data and displayed it using a Leaflet map, along with 4 charts and a word cloud.
-
 </summary>
 </details>
 
 
  <details>
-  <summary><b>Motivation of the Project</b>
+  <summary><b>Motivation of the Project</b></summary>
 
 The motivation for this project was to contribute to the knowledge about the existance of Extraterrestrial activity
 and contribute to the documentation and analysis of this cultural phenomenon, adding to the body of knowledge available for researchers, enthusiasts, and the curious alike. We also wanted to hone our data analysis skills in front-end frameworks like D3.Js and Leaflet.js along with using python to analyze and clean the dataset. This data also has first-hand encounters from real people via a reputable
 website. 
-</summary>
 
-  </details>
+</details>
 
 
 <details><summary><b>Design Sketches</b></summary>

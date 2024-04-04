@@ -77,15 +77,34 @@ website.
 </details>
 
 
-<details><summary><b>Design Sketches</b></summary>
+<details><summary><b>Design Sketches and Specifications</b></summary>
 
-<img width="576" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/0efe1f39-4642-4270-9ab7-b82ae66560f7">
+<details><summary><b>Design Specification</b></summary>
 
-<img width="515" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/5b630b87-3bb9-4f94-a13e-8c22a2300c3e">
+* Used a linear page format (changed our original grid format) as we wanted a linear flow of selections instead of multiple views together
+* Have a story-like feel to the selcted/ brushed plots and result is tracked on the top
+* Intutive tool tips with brushing on all
+* More info about design specifications to follow
 
-<img width="523" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/c6384707-3d60-47bf-b364-fd05bb45e035">
+</details>
 
-<img width="516" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/a97e5331-ddb6-4025-ba79-285c06e835e8">
+**B Goals sketches**
+
+<img width="894" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/61dcdac2-f43e-4d5e-a139-3a1d59fb032e">
+
+**Word Cloud**
+
+<img width="337" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/02bf269b-6351-4d76-b0d2-a4ed9edd8b20">
+
+<img width="587" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/ea016774-bbfc-4b43-b6d5-b41ad44b4250">
+
+
+
+**Sentiment Analysis**
+
+<img width="428" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/797459a9-eed2-49ac-b57e-8a90f78110f9">
+
+
 
 </details>
 
@@ -356,11 +375,6 @@ README.md
 <b>3. </b> Improve styling and spacing in the page
   
 </details>
-
-
-
-
-
 
 
 

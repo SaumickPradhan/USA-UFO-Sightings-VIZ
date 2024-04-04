@@ -68,11 +68,6 @@ For the scope of the project we decided to focus on the USA UFO sightings which 
 
 
 
-<details>
-<summary> <b> Introduction </b>
-
-</summary>
-</details>
 
 
  <details>
@@ -103,7 +98,7 @@ website.
 <details>
   <summary><b>1. Header with Data and Tools used</b> </summary>
   
-  <bHeading with Intro, Data source and Tools used with Links</b>
+  <b>Heading with Intro, Data source and Tools used with Links</b>
 
 ![image](https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/3efde11a-4d05-4f7a-aa00-3f6a416f085b)
 

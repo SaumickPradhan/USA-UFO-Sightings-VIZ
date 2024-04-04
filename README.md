@@ -220,14 +220,16 @@ website.
 
 </details>
 
+</details>
+
 <details>
-<summary><b>Details on Demand using Tool Tip</b></summary>
+<summary><b>8. Details on Demand using Tool Tip</b></summary>
 <b>Hovering over the charts will provide extra information about that data point</b>
 <img width="607" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/75254cba-953b-4b57-9f2d-e19d8b468691">
 </details>
 
 <details>
-<summary><b>Brushing and Linking</b></summary>
+<summary><b>9. Brushing and Linking</b></summary>
 <b>Selecting and dragging a section on the chart will lead to focusing the data on only a certain section on all other visualizations as well</b>
 <img width="600" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/e0bcbac8-880b-495b-b89f-818878d75390">
 
@@ -236,7 +238,7 @@ website.
 
 
 <details>
-  <summary><b>6. Correlation between Selected Attributes with Scatter plot</b> </summary>
+  <summary><b>10. Correlation between Selected Attributes with Scatter plot</b> </summary>
   <b>Using scatter plot to show the relation between the selected attributes</b>
 
 <img width="680" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/c2cfac8b-1fb8-4ef4-ad50-91c39d020406">

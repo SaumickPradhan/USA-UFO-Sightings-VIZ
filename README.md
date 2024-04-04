@@ -4,7 +4,7 @@
 
 **A Interactive Data Visualization exploring the correlation between the Spatial distribution and Temporal occurrences of UFO sightings across the USA**
 
-https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/704ce1f2-d0b7-4629-8b43-2bb1ddfea772
+![Apr-04-2024 19-19-53](https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/cc42723e-2cdb-4bfb-a6f0-bf79d8daa628)
 
 <h2>Description</h2>
 
@@ -88,6 +88,17 @@ website.
 
 </details>
 
+**UI sketches**
+
+<img width="522" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/405d09b8-c849-4529-b206-96cdc4827c4b">
+
+<img width="536" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/3c1c56f9-801b-4d81-af8f-bb257f180967">
+
+<img width="520" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/cf7f3c98-ae6c-46ab-a7b8-464ff1830ca2">
+
+<img width="532" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/56b6d40f-a53a-4d79-86fb-61c4b0ff827f">
+
+
 **B Goals sketches**
 
 <img width="894" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/61dcdac2-f43e-4d5e-a139-3a1d59fb032e">
@@ -103,6 +114,7 @@ website.
 **Sentiment Analysis**
 
 <img width="428" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/797459a9-eed2-49ac-b57e-8a90f78110f9">
+
 
 
 
@@ -133,9 +145,9 @@ website.
 
 
 <details>
-  <summary><b>3. Color Section (N) </b> </summary>
+  <summary><b>3. Color Section (N, color by ke buttons) </b> </summary>
   
-  <b>Following are the reasons to select the colors</b>
+  <b> (C Goals) Following are the reasons to select the colors</b>
 
 - Economics: Yellow/ orange color to signify money
   
@@ -283,36 +295,46 @@ website.
 <h2>Interesting Findings from the Application</h2>
 
 <details>
-<summary><b>Relation between High school completion and smoking percent</b></summary>
-<b>It is interesting to note that higher that counties with higher number of High school dropouts have a relative higher number of smoking percent</b>
-<img width="681" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/9f8f7ff4-b72c-415d-87fa-84e4eb149591">
+<summary><b>Recent Increase in Sightings</b></summary>
+<b>It is interesting to note that the number of sightings have increased recently. Maybe due to increased airplanes, drones, people might assume them to be UFOs.</b>
+<img width="638" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/a015a9f5-ccaf-4904-9710-a06509f9cd8b">
 </details>
 
 <details>
-<summary><b>Less Health Insurances in Texas</b></summary>
+<summary><b>More sightings at night</b></summary>
   
-<b>Counties in Texas have less number of health insuraces as compared to other counties</b>
+<b>More sigthings seen at night, as shining objects, shooting stars and other entities are often confused with UFOs</b>
   
-<img width="573" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/6e5d9d25-b291-4235-96d4-12b7dad80c13">
+<img width="672" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/26df7397-c936-4e09-b975-1cf56d20b33c">
 </details>
 
 <details>
-<summary><b>Majority Rural counties</b></summary>
-<b>Majority of the counties are rural, especially in Central USA</b>
+<summary><b>Common words are White and Light</b></summary>
+<b>This shows that the sightings are commonly associated with sparkling flash lights (especially at night). Maybe stars.</b>
   
-<img width="559" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/ed2d689b-023d-40b6-be4e-2c281ab58cdf">
-  <img width="614" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/fe69bbb1-405b-4a4f-a7cf-75cda321ded7">
+<img width="359" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/1b2d8336-10f9-44d6-ab75-329ed152ad4d">
 
 </details>
 
 
 <details>
-<summary><b>Park access Index</b></summary>
-<b>The western part of USA has a lot of Park access index. This sounds correct, given the vast open land and national parks in this area.</b>
+<summary><b>More sigting near the airports</b></summary>
+<b> Sightings are commonly seen near commericial airports. here is an example from California and Nevada. Look at SFO, SJO, LAX, LAS.</b>
   
-<img width="573" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/6c030b71-1881-405a-9cdf-9d45617e5106">
+<img width="594" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/48fd063e-4d6a-4772-ac4e-18aba8a49300">
+
+<img width="601" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/f2d4b126-e2f6-4d4a-aeca-ef6b635b693d">
 
 </details>
+
+<details>
+<summary><b>Population and terrain based data</b></summary>
+<b> The more populated areas have more sigthings. The rough terrain areas have less sightings. <b>
+ 
+<img width="601" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/f2d4b126-e2f6-4d4a-aeca-ef6b635b693d">
+
+</details>
+
 
 
 

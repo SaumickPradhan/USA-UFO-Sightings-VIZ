@@ -117,7 +117,7 @@ website.
 
 
 <details>
-  <summary><b>3. Color Section</b> </summary>
+  <summary><b>3. Color Section (N) </b> </summary>
   
   <b>Following are the reasons to select the colors</b>
 
@@ -294,7 +294,7 @@ website.
 
 
 
-<h2>Application Architecture</h2>
+<h2>Application Architecture (N) </h2>
 
 <details>
 <summary><b>Libraries Used</b></summary>

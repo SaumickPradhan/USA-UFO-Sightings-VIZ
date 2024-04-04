@@ -165,7 +165,7 @@ For the scope of the project we decided to focus on the USA UFO sightings which 
 
 
 <details>
-  <summary><b>5. Timeline</b> </summary>
+  <summary><b>6. Timeline</b> </summary>
   <b> (C Goals) Timeline by Year and number of sightings </b>
 
   <b> Reasons: </b>
@@ -182,7 +182,7 @@ For the scope of the project we decided to focus on the USA UFO sightings which 
 
 
 <details>
-  <summary><b>5. Comparing Distributions of Counties with Charts</b> </summary>
+  <summary><b>7. New Views</b> </summary>
   <b>Using Histograms and Bar charts to show the data depending on the selected attribute</b>
 
 <img width="1215" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/6be3575b-f49c-4c62-99e0-546d5913d19c">

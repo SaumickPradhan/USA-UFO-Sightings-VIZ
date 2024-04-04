@@ -8,18 +8,15 @@ https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/704ce1f2
 
 <h2>Description</h2>
 
-<br>
-
 In our project, "UFO Sightings in United States: The Truth is out there" , we embarked on a journey to explore and visualize a comprehensive dataset compiled by the National UFO Reporting Center. This dataset, spanning over a century of reports from around the world, offers a unique window into the collective human experience with the unexplained aerial phenomena. We filtered the comprehensive dataset to provide us with information about UFO sightings in the United States, and used that to analyze the data and displayed it using a Leaflet map, along with 4 charts and a word cloud.
 
 <h2>Video Presentation</h2>
 
-[https://youtu.be/8Fe_6UhcPd0](https://youtu.be/R4DOaYfwUuk)
-
+https://youtu.be/_gbEaazZpM8
 
 <h2>Check It Out</h2>
 
-[https://interactive-usa-county-health-data-viz.vercel.app/](https://interactive-usa-county-health-data-viz.vercel.app/).
+https://usa-ufo-sighting-viz.vercel.app/
 
 <h2>Getting Started</h2>
 
@@ -185,7 +182,7 @@ website.
 <details>
   <summary><b>7. New Views</b> </summary>
  <details>
-  <summary><b>Bar chart for sightings by Months, depicting seasons</b></summary>
+  <summary><b> (B Goals) Bar chart for sightings by Months, depicting seasons</b></summary>
 
   **Reason:** We did not have different colors for seasons as different places have different seasons. Wanted to depict clear frequency change hence decided to go with bar chart.
 
@@ -194,7 +191,7 @@ website.
 </details>
 
  <details>
-  <summary><b>Histogram chart for frequency of sightings different times during the day</b></summary>
+  <summary><b> (B Goals) Histogram chart for frequency of sightings different times during the day</b></summary>
 
   **Reason:** Histogram helps with coninuous time intervals throughout the day. 24 hour timing used as it is universal.
 
@@ -203,7 +200,7 @@ website.
 </details>
 
  <details>
-  <summary><b>Histogram chart for frequency of sightings by encounter length</b></summary>
+  <summary><b> (B Goals) Histogram chart for frequency of sightings by encounter length</b></summary>
 
   **Reason:** Handled very short durations by clubbing them into custom sections (bars) of intervals
 
@@ -212,7 +209,7 @@ website.
 </details>
 
  <details>
-  <summary><b>Emoji based scatter plot to track frequency of occurance of different shapes</b></summary>
+  <summary><b> (B Goals) Emoji based scatter plot to track frequency of occurance of different shapes</b></summary>
 
   **Reason:** We wanted the user to see the different shapes represented in the plot to be intuitive.
 
@@ -224,70 +221,44 @@ website.
 
 <details>
 <summary><b>8. Details on Demand using Tool Tip</b></summary>
-<b>Hovering over the charts will provide extra information about that data point</b>
-<img width="607" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/75254cba-953b-4b57-9f2d-e19d8b468691">
-</details>
+<b>Hovering over the Map and Word Cloud will provide extra information about that data point</b>
+ 
+<img width="560" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/531bcd7e-f162-4947-8d22-147d6fd02170">
 
-<details>
-<summary><b>9. Brushing and Linking</b></summary>
-<b>Selecting and dragging a section on the chart will lead to focusing the data on only a certain section on all other visualizations as well</b>
-<img width="600" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/e0bcbac8-880b-495b-b89f-818878d75390">
+<img width="255" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/b2882914-3370-4ca0-b919-345b9fa4494d">
 
-</details>
-</details>
-
-
-<details>
-  <summary><b>10. Correlation between Selected Attributes with Scatter plot</b> </summary>
-  <b>Using scatter plot to show the relation between the selected attributes</b>
-
-<img width="680" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/c2cfac8b-1fb8-4ef4-ad50-91c39d020406">
-
-<details>
-<summary><b>Details on Demand using Tool Tip</b></summary>
-<b>Hovering over the plot will provide extra information about that data point</b>
-<img width="672" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/d0dd946b-f3aa-4737-8b0b-eb7bb6680f07">
+<img width="205" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/54ed41ba-4e25-47c9-8b82-dd1e77c2650a">
 
 </details>
 
 <details>
-<summary><b>Sliding Brushing and Linking</b></summary>
-<b>Selecting and dragging a section on the plot will lead to focusing the data on only a certain section on all other visualizations as well</b>
-<img width="655" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/5ccfc229-45b3-4dcb-a58f-add9a3715750">
+<summary><b>9. Sliding Brushing and Linking Map</b></summary>
+<b> (A Goals) Brushing Map by Selecting and dragging a section on the Time line or any of the 4 Plots will lead to focusing the data on only a certain section on Map</b>
 
+<img width="1078" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/9e2254d3-9458-448a-a5fb-7d0dab87ac4f">
+
+<img width="705" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/4c6ec01f-7661-438d-93f7-c26526791b17">
+
+<img width="1119" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/c8ef1fa3-89a1-46bc-a967-35db0f53c1c1">
+
+<img width="1186" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/16577899-7ab8-4b76-ae03-c38cf68e7d57">
+
+<img width="1075" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/332a850c-666c-4480-854b-7e7f721ee489">
+
+**Reason:** 
+* Becasue of the large dataset of shapes, it is slow to load the data. Hence brushing here is slow.
+* Professor said it is not easy to use the default brush with D3 hence we came up with alternatives to brush by timeline
+
+<img width="343" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/cbb43c47-9e5a-4e4d-b293-d91282b4cd19">
+
+<b> (A Goals) Word Cloud to brush the Map</b>
+
+<img width="1169" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/9ddaaee5-0e6b-4425-bc0b-f503eddd0f8d">
+
+ 
 </details>
 </details>
 
-
-
-<details>
-  <summary><b>7. Comparing Distributions of Counties with Maps</b> </summary>
-  <b>Using two Side by Side Maps to compare the magnitude of the selected attributes in various USA counties along with a legend bar</b>
-
-<img width="1325" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/067a925f-5e86-4826-a2f0-7566eba6bb4a">
-
-<img width="710" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/9555c323-9094-4cd0-b1ac-ff2595a86e23">
-
-
-<details>
-<summary><b>Details on Demand using Tool Tip</b></summary>
-<b>Hovering over the maps will provide extra information about that data point</b>
-<img width="567" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/060217b6-f2e3-4fd5-ad44-75e7f519e9d0">
-</details>
-
-<details>
-<summary><b>Brushing and Linking</b></summary>
-<b>Selecting and dragging a section on the Map will lead to focusing the data on only a certain section on all the visualizations</b>
-<img width="1282" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/b56add0a-9faa-4910-8b8e-109fc9b23795">
-
-</details>
-</details>
-
-<details>
-<summary><b>8. Toggle Magnifying Glass</b></summary>
-<b>The button helps magnify over a particular section of the map to see the counties</b>
-<img width="264" alt="image" src="https://github.com/SaumickPradhan/Interactive-USA-County-Health-Data-Viz/assets/85262444/d1d8bbe7-5f6c-4c61-8640-d1802fca8ee7">
-</details>
 
 
 <h2>Interesting Findings from the Application</h2>

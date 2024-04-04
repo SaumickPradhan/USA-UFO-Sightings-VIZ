@@ -423,7 +423,7 @@ NewupdateMapWithFilteredData(filteredCoords) {
   vis.Dots = vis.svg.selectAll('circle')
       .data(filteredCoords)
       .join('circle')
-      .attr("fill", "steelblue") // Set color for filtered points
+      .attr("fill", "white") // Set color for filtered points
       .attr("stroke", "black")
       .attr("cx", d => vis.theMap.latLngToLayerPoint([d.latitude, d.longitude]).x)
       .attr("cy", d => vis.theMap.latLngToLayerPoint([d.latitude, d.longitude]).y)

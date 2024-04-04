@@ -107,6 +107,7 @@
         left: 50%; /* Center horizontally */
         transform: translate(-50%, -50%); /* Centering trick */
         z-index: 1000; /* Ensure the UI is on top of the map */
+        margin-top: -40px;;
     }
 
     #colorByOptions button {
@@ -114,18 +115,18 @@
         padding: 8px 16px; /* Add padding to buttons */
         font-size: 16px; /* Adjust font size */
         border: none;
-        background-color: #a80008; /* Button background color */
+        background-color: #4CAF50; /* Button background color */
         color: white; /* Button text color */
         border-radius: 4px; /* Button border radius */
         cursor: pointer;
     }
 
     #colorByOptions button:hover {
-        background-color: #005E87; /* Hover background color */
+        background-color: #45a049; /* Hover background color */
     }
     
     #select-attribute-1 {
-        font-size: 16px; /* Adjust the font size as needed */
+        font-size: 25px; /* Adjust the font size as needed */
         margin-top: 10px; /* Adjust the top margin as needed */
         padding: 5px; /* Add padding to make it visually appealing */
         border-radius: 5px; /* Add border-radius for rounded corners */
@@ -166,7 +167,7 @@
     
     <div id="map-container">
         <div id="my-map"></div>
-        <label for="select-attribute-1">Select Attribute 1:</label>
+        <label for="select-attribute-1" style = "font-family:Arial, Helvetica, sans-serif ;">Select Attribute 1:</label>
         <select name="select-attribute-1" id="select-attribute-1"></select>
         <!-- UI for 'color by' options -->
         <div id="colorByOptions">

@@ -410,13 +410,15 @@ README.md
   *  Color By buttons: Nachiket
   *  Leaflet Map and Re orientation: Saumick
   *  Map Tool Tips: Saumick
+  *  Data preprocessing: Nachiket
   *  Change maps by attribute: Saumick
   *  Time Line + Brushing: Om
   *  Sightings by Month + Brushing: Om
   *  Sighting in a Day + Brushing: Om
-  *  Sightings by Encounter Length + Brushing: Saumick + Nachiket
+  *  Sightings by Encounter Length + Brushing: Nachiket + Saumick
   *  Sightings by Shape + Brushing: Saumick
   *  Word Cloud + Tool tips: Nachiket
+  *  Map Brushing: Nachiket
   *  CSS, coloring and formatting maps: Saumick
   *  Documentation: Saumick + Nachiket
   *  UI Sketches: Ameya

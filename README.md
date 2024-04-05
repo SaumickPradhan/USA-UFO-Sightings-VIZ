@@ -345,8 +345,11 @@ Filtering By WordCloud:
 
 <details>
 <summary><b>Libraries Used</b></summary>
+ 
 - [Javascript D3](https://d3js.org/)
+ 
 - [Leaflet](https://leafletjs.com/)
+  
 - [WordCloud](https://github.com/jasondavies/d3-cloud)
 </details>
 

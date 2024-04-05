@@ -287,6 +287,9 @@ Filtering By WordCloud:
 
 <b> (A Goals) Word Cloud to brush the Map</b>
 
+**Reason:** 
+* click on the words in the word cloud to see their spatial location and frequency in the map. the word cloud has tool tips and is colors by size. it brushes the map. 
+
 <img width="1169" alt="image" src="https://github.com/SaumickPradhan/USA-UFO-Sightings-VIZ/assets/85262444/9ddaaee5-0e6b-4425-bc0b-f503eddd0f8d">
 
  
@@ -404,9 +407,9 @@ Filtering By WordCloud:
 
 <details>
 <summary><b>Future works</b></summary>
-<b>1. </b> Tracking changes in attributes for each type of county category
+<b>1. </b> looking at a way to add different map where the regions can be selected
 
-<b>2. </b> Creating functions for brushing and tool tip for code resuability 
+<b>2. </b> creating a uniform spaced maps with clickable bars
 
 <b>3. </b> Improve styling and spacing in the page
   

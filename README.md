@@ -77,16 +77,10 @@ website.
 </details>
 
 
-<details><summary><b>Design Sketches and Specifications</b></summary>
 
-<details><summary><b>Design Specification</b></summary>
+<details><summary><b>Design Sketches</b></summary>
 
-* Used a linear page format (changed our original grid format) as we wanted a linear flow of selections instead of multiple views together
-* Have a story-like feel to the selcted/ brushed plots and result is tracked on the top
-* Intutive tool tips with brushing on all
-* More info about design specifications to follow
 
-</details>
 
 **UI sketches**
 
@@ -120,6 +114,14 @@ website.
 
 </details>
 
+<details><summary><b>Design Specification</b></summary>
+
+* Used a linear page scrollable format (changed our original grid based format) as we wanted a linear flow of selections instead of multiple views together. This facilitiates our story flow during our case studies and findings, mentioned later. 
+* Have a story-like feel to the selcted/ brushed plots and result is tracked on the top
+* Intutive tool tips with brushing on all
+* More info about design specifications to follow
+
+</details>
 
 <h2>Visualization components</h2>
 

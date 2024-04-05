@@ -421,6 +421,6 @@ README.md
   *  Map Brushing: Nachiket
   *  CSS, coloring and formatting maps: Saumick
   *  Documentation: Saumick + Nachiket
-  *  UI Sketches: Ameya
+  *  Some UI Sketches: Ameya
     
  </details>

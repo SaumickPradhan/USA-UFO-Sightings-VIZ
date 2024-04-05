@@ -145,21 +145,24 @@ website.
 
 
 <details>
-  <summary><b>3. Color Section (N, color by ke buttons) </b> </summary>
+  <summary><b>3. Color Section </b> </summary>
   
-  <b> (C Goals) Following are the reasons to select the colors</b>
+For the color of dots on leaflet map:
+  - year : Used A linear color scale to represent years, with darker shades indicating older years and lighter shades for younger years.
+  - month : Used A sequential color scale to represent months, with different shades of green assigned to each month.
+  - Time of Day : Used Fixed colors for each :-  Morning: Yellow, Afternoon: Orange, Evening: Red, Night: Blue. 
+  - UFO shape: Used an ordinal color scale to represent different UFO shapes.
 
-- Economics: Yellow/ orange color to signify money
-  
-- Environment: Cool colors to signify the nature
+For the color of the buttons: 
+ - used bright green for all four buttons to keep the theme of alternating green/blue colors all over the website.
 
-- Behavioral factors: Dark colors
-  
-- Demographics: Little colors to show bar chart difference
+For the colors present in Charts:
+- Used a mix of blue/green, traditionally used to represent extrateresstrial life. 
+- Each chart alternatives between blue and green.
 
-- Health care: Green colors for health care
-  
-- Health: Red colors 
+Filtering By WordCloud: 
+  - Used white to represent the changes in leaflet map, and indicate a clear change in selection. 
+
 
 </details>
 
@@ -338,19 +341,17 @@ website.
 
 
 
-<h2>Application Architecture (N) </h2>
+<h2>Application Architecture </h2>
 
 <details>
 <summary><b>Libraries Used</b></summary>
 - [Javascript D3](https://d3js.org/)
-- [TopoJson](https://github.com/topojson/us-atlas)
-- Counties-10m.json for Choropleth maps
+- [Leaflet](https://leafletjs.com/)
+- [WordCloud](https://github.com/jasondavies/d3-cloud)
 </details>
 
 <details>
 <summary><b>Directory Structure</b></summary>
-
-<b>Every .js file has class that we instantiate in main.js</b>
   
 - CSS
 
@@ -358,29 +359,39 @@ website.
     
 - data
 
-  - attributes.json: All feature attributes stored here with color and label in json format
+  - ufo_sightings.csv: Origianl data for all the encounters, pulled from [National UFO Reporting Center](https://nuforc.org/).
+
+  - ufo_sightings_NMV.csv: Preproccessed Data with encounters filtered for US only, with no missing values.
  
-  - counties-10m.json: Used in choropleth, from online resource.
+  - most_common_words: Preproccessed data with the 50 most commonly used word in descripttions.
  
-  - national_health_data.csv: Pre processed dataset
+  - word_coordinates1.csv: Preprocessed data with latitude and longitude attributed with the most common words.
     
 - js
   
-  - choropleth.js: File with choropleth class and all its brushing and tooltip functions
+  - Leaflet.js: Leaflet file
     
   - d3.v6.min.js: D3 file
-    
-  - histoBarChart.js : File with class for combinedChart which helps create distribution charts based on attribute chart type and all its brushing and tooltip functions
-    
-  - main.js: The runner file for all .js classes. It does all the data preprocessing and object instantiation of classes. It also have error handling capabilities.
-    
-  - scatterplot.js: File with scatterplot class and all its brushing and tooltip functions
-    
-  - topojson.v3.js: Used for choropleth
-    
-index.html: Runner page
 
-README.md
+  - Leaflet.js-map: Leaflet map file
+
+  - LeafletMap.js: Leaflet map file with Leaflet class for displaying the map and filtering with brushing along with tooltip functionality. 
+    
+  - main.js: Runner file for .js files along with loading all the csv datasets using D3
+    
+  - ufo_encounter.js: .js file for visualizing the frequency of sightings by encounter length by using D3.js, and implementing an interactive brush for filtering data.
+    
+  - ufo_seasonal_patterns.js: .js file for visualizing the frequency of sightings by month by using D3.js, and implementing an interactive brush for filtering data by month on a bar graph.
+
+  - ufo_shaoe.js: .js file for visualizing the frequency of sightings by shape using custom shapes, and implementing an interactive brush for filtering data by shape on a bar chart.
+
+  - ufo_sightings.js: .js file for visualizing the timeline of sightings over the years, and implementing an interactive brush for selecting date ranges.
+
+  - ufoshapeplot.js: .js file for creating a bar chart visualization of UFO sightings categorized by shape and initializing the visualization with scales, axes, and brush functionality. 
+    
+- index.html: Runner page
+
+- README.md
 
 
 
